@@ -89,19 +89,6 @@ pip install torchdiffeq==0.2.3 scikit-image pytorch-fid
 
 ---
 
-## 📈 Results Summary
-
-| Epoch | SSIM ↑ | FID ↓ |
-| ----- | ------ | ----- |
-| 10    | 0.48   | 112.3 |
-| 100   | 0.59   | 76.4  |
-| 200   | 0.65   | 52.1  |
-| 300   | 0.68   | 45.3  |
-
-> ✅ The hybrid model improves temporal smoothness (higher SSIM) but requires longer training to reach good FID scores.
-
----
-
 ## 💡 Key Findings
 
 * Neural ODEs improve **temporal continuity** but **slow down training**.
@@ -136,6 +123,6 @@ If you use this code or ideas in your research, please cite:
   author={Aisha Hamad},
   year={2025},
   howpublished={GitHub Repository},
-  url={https://github.com/yourusername/hybrid-ode-video-generation}
+  url={https://github.com/Aishahamad01/UCF101}
 }
 ```
