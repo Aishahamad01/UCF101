@@ -1,17 +1,15 @@
 # UCF101
-Here's a professional **GitHub README** tailored for your hybrid Neural ODE + ResNet video generation project, written from the perspective of a data science expert and researcher:
-
 ---
 
-# 🧠📹 Hybrid Neural ODE-ResNet Video Generation
+# 🧠📹 Video Generation Using Neural ODE
 
-*Modeling Continuous Temporal Dynamics in Video Using Neural ODEs and ResNet Decoders*
+*Modeling Continuous Temporal Dynamics in Video Using Neural ODEs and ResNet Model*
 
 ---
 
 ## 🔍 Overview
 
-This project explores a **hybrid deep generative model** that integrates **Neural Ordinary Differential Equations (Neural ODEs)** with **ResNet-based convolutional decoders** to generate realistic video clips. The model is trained on the **UCF101 action recognition dataset** and aims to model **continuous-time temporal dynamics** while maintaining **spatial resolution fidelity** in the generated frames.
+This project explores a **neural ODE, ResNet and hybrid deep generative models** to generate realistic video clips. The model is trained on the **UCF101 action recognition dataset** and aims to model **continuous-time temporal dynamics** while maintaining **spatial resolution fidelity** in the generated frames.
 
 We evaluate the approach using two standard video generation metrics:
 
@@ -30,35 +28,21 @@ While ResNet-based video generators are efficient, they often suffer from **blur
 
 ## 🏗️ Model Architecture
 
-* **Latent Dynamics**: Modeled using a Neural ODE block that evolves a latent state over continuous time.
-* **Decoder**: A ResNet-based 3D convolutional decoder maps evolved latent states to video frames.
+* **Latent Dynamics**: Modeled using a Neural ODE/ ResNet block that evolves a latent state over continuous time.
+* **Decoder**: A decoder maps evolved latent states to video frames.
 * **Discriminator**: A 3D CNN that distinguishes real from generated video clips (GAN-style training).
-
-```
-z ~ N(0, 1) → Neural ODE → Latent Trajectory → ResNet Decoder → Generated Video
-```
 
 ---
 
 ## 📁 Dataset
 
 * **UCF101** (preprocessed into `.pt` tensors of shape `[16, 3, 64, 64]` per clip)
-* Directory structure:
-
-  ```
-  /kaggle/working/ucf101processed/
-      class_1/
-        vid1.pt
-        vid2.pt
-      class_2/
-        ...
-  ```
 
 ---
 
 ## 🚀 Training
 
-* **Epochs**: 300
+* **Epochs**: 200, 300, 2000
 * **Batch Size**: 16
 * **Optimizer**: Adam (β₁=0.5, β₂=0.999)
 * **Loss**: Binary Cross Entropy with Label Smoothing
