@@ -28,9 +28,9 @@ While ResNet-based video generators are efficient, they often suffer from **blur
 
 ## 🏗️ Model Architecture
 
-* **Latent Dynamics**: Modeled using a Neural ODE/ ResNet block that evolves a latent state over continuous time.
+* **Latent Dynamics**: Modeled using a Neural ODE/ ResNet block that evolves a latent state over continuous/ discrete time.
 * **Decoder**: A decoder maps evolved latent states to video frames.
-* **Discriminator**: A 3D CNN that distinguishes real from generated video clips (GAN-style training).
+* **Discriminator**: A 3D CNN that distinguishes real from generated video clips.
 
 ---
 
@@ -42,17 +42,16 @@ While ResNet-based video generators are efficient, they often suffer from **blur
 
 ## 🚀 Training
 
-* **Epochs**: 200, 300, 2000
+* **Epochs**: 10, 100, 200, 300, 2000
 * **Batch Size**: 16
 * **Optimizer**: Adam (β₁=0.5, β₂=0.999)
 * **Loss**: Binary Cross Entropy with Label Smoothing
-* **Evaluation Epochs**: 10, 100, 200, 300
+* **Evaluation Epochs**: 10, 100, 200, 300, 2000
 
 ### Logs & Output
 
 * Logs shapes of real and fake videos for consistency.
 * Visualizes generated frames vs. real frames.
-* Saves models at `/kaggle/working/models/`.
 
 ---
 
